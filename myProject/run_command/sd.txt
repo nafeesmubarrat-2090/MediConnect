@@ -1,0 +1,20 @@
+for terminal 1
+
+export JAVAFX_HOME="$HOME/javafx-sdk-21.0.2"
+cd /Users/asmaulhasabsranto/Documents/AidAccess_upload/myProject
+java --module-path "$JAVAFX_HOME/lib" --add-modules javafx.controls,javafx.fxml \
+  -cp out myProject.ServerFX
+
+for terminal 2
+
+export JAVAFX_HOME="$HOME/javafx-sdk-21.0.2"
+cd /Users/asmaulhasabsranto/Documents/AidAccess_upload/myProject
+java --module-path "$JAVAFX_HOME/lib" --add-modules javafx.controls,javafx.fxml \
+  -cp out myProject.AidAccessApp
+
+  terminal three
+  
+  export JAVAFX_HOME="$HOME/javafx-sdk-21.0.2"
+cd /Users/asmaulhasabsranto/Documents/AidAccess_upload/myProject
+java --module-path "$JAVAFX_HOME/lib" --add-modules javafx.controls,javafx.fxml \
+  -cp out myProject.SupportAgentApp

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.mediconnect.RegisterController"
+      prefWidth="520" prefHeight="640" stylesheets="@style.css"
+      style="-fx-background-color: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);">
+
+    <top>
+        <!-- Back button in upper left corner -->
+        <HBox alignment="TOP_LEFT" BorderPane.alignment="TOP_LEFT">
+            <padding>
+                <Insets top="15" right="15" bottom="0" left="15"/>
+            </padding>
+            <Button text="←" onAction="#handleGoBack"
+                    style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-background-radius: 50%; -fx-padding: 10px 14px; -fx-font-size: 20px; -fx-font-weight: bold; -fx-cursor: hand; -fx-border-color: rgba(255,255,255,0.3); -fx-border-width: 1px; -fx-border-radius: 50%;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="TOP_CENTER" spacing="15" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="30" bottom="25" left="30"/>
+            </padding>
+
+            <Label text="Create Doctor Profile" styleClass="auth-title" style="-fx-font-size: 28px;"/>
+            <Label text="Join AidAccess Today" styleClass="auth-subtitle"/>
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS"
+                        style="-fx-background-color: transparent; -fx-background: transparent;">
+                <content>
+                    <VBox spacing="14" alignment="TOP_CENTER" styleClass="card" prefWidth="420">
+                        <children>
+                            <TextField fx:id="usernameField" promptText="Username" prefWidth="350" styleClass="text-field"/>
+                            <PasswordField fx:id="passwordField" promptText="Password" prefWidth="350" styleClass="password-field"/>
+                            <TextField fx:id="nameField" promptText="Full Name" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="sectorField" promptText="Sector/Specialty" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="qualificationsField" promptText="Qualifications (e.g., MBBS, MD)" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="experienceField" promptText="Years of Experience" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="ageField" promptText="Age" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="phoneField" promptText="Phone Number" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="emailField" promptText="Email" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="chamberField" promptText="Chamber Name" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="locationField" promptText="Location (e.g., Dhaka, Dinajpur)" prefWidth="350" styleClass="text-field"/>
+
+                            <!-- Available Days Selection with Per-Day Consultation Hours -->
+                            <VBox spacing="6" prefWidth="350">
+                                <Label text="Select Available Days &amp; Set Hours for Each" styleClass="field-label"/>
+                                <Label text="Check the days you're available and set hours for each day" style="-fx-font-size: 11px; -fx-text-fill: #718096; -fx-font-style: italic;"/>
+                                <VBox fx:id="daysContainer" spacing="8" prefWidth="350" style="-fx-padding: 10; -fx-background-color: #f7fafc; -fx-background-radius: 8;">
+                                    <!-- Day rows will be added dynamically -->
+                                </VBox>
+                            </VBox>
+
+                            <ComboBox fx:id="genderField" promptText="Gender" prefWidth="350" styleClass="combo-box"/>
+                            <TextField fx:id="feesField" promptText="Consultation Fees" prefWidth="350" styleClass="text-field"/>
+                            <TextField fx:id="hospitalAffiliationsField" promptText="Hospital Affiliations" prefWidth="350" styleClass="text-field"/>
+                            <ComboBox fx:id="onlineConsultationField" promptText="Online Consultation Available?" prefWidth="350" styleClass="combo-box"/>
+                            <ComboBox fx:id="consultationDurationField" promptText="Consultation Duration (minutes)" prefWidth="350" styleClass="combo-box"/>
+                            <Button text="Register" onAction="#handleRegister" prefWidth="200" styleClass="primary"
+                                    style="-fx-padding: 16px 32px; -fx-font-size: 16px;"/>
+                        </children>
+                        <padding>
+                            <Insets top="25" right="25" bottom="25" left="25"/>
+                        </padding>
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

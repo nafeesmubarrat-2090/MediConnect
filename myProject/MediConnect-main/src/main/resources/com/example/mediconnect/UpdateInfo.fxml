@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.mediconnect.UpdateInfoController"
+      prefWidth="650" prefHeight="720" stylesheets="@style.css"
+      style="-fx-background-color: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);">
+
+    <top>
+        <!-- Header with back button -->
+        <HBox alignment="CENTER_LEFT" spacing="15" BorderPane.alignment="CENTER_LEFT"
+              style="-fx-padding: 20px 30px;">
+            <children>
+                <Button text="←" onAction="#handleGoBack"
+                        style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-background-radius: 50%; -fx-padding: 10px 14px; -fx-font-size: 20px; -fx-font-weight: bold; -fx-cursor: hand; -fx-border-color: rgba(255,255,255,0.3); -fx-border-width: 1px; -fx-border-radius: 50%;"/>
+                <Label text="Update Your Profile" styleClass="auth-title" style="-fx-font-size: 26px;"/>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <!-- ScrollPane wrapping the card with update form -->
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" BorderPane.alignment="CENTER"
+                    style="-fx-background-color: transparent; -fx-background: transparent;">
+            <content>
+                <VBox alignment="TOP_CENTER" style="-fx-background-color: transparent;" fillWidth="true">
+                    <padding>
+                        <Insets top="20" right="30" bottom="30" left="30"/>
+                    </padding>
+                    <VBox spacing="16" styleClass="card" prefWidth="550">
+                        <children>
+                            <VBox spacing="14" fillWidth="true">
+                                <!-- Username (Read-only) -->
+                                <VBox spacing="5">
+                                    <Label text="Username (cannot be changed)" styleClass="field-label"/>
+                                    <Label text="Your username is fixed and cannot be modified" style="-fx-font-size: 12px; -fx-text-fill: #718096;"/>
+                                </VBox>
+
+                                <!-- Password -->
+                                <VBox spacing="5">
+                                    <Label text="Password" styleClass="field-label"/>
+                                    <PasswordField fx:id="passwordField" promptText="Enter new password" styleClass="password-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Name -->
+                                <VBox spacing="5">
+                                    <Label text="Full Name" styleClass="field-label"/>
+                                    <TextField fx:id="nameField" promptText="Enter your full name" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Sector -->
+                                <VBox spacing="5">
+                                    <Label text="Sector/Specialty" styleClass="field-label"/>
+                                    <TextField fx:id="sectorField" promptText="Enter your sector/specialty" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Qualifications -->
+                                <VBox spacing="5">
+                                    <Label text="Qualifications" styleClass="field-label"/>
+                                    <TextField fx:id="qualificationsField" promptText="Enter your qualifications" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Experience -->
+                                <VBox spacing="5">
+                                    <Label text="Years of Experience" styleClass="field-label"/>
+                                    <TextField fx:id="experienceField" promptText="Enter years of experience" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Age -->
+                                <VBox spacing="5">
+                                    <Label text="Age" styleClass="field-label"/>
+                                    <TextField fx:id="ageField" promptText="Enter your age" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Phone -->
+                                <VBox spacing="5">
+                                    <Label text="Phone Number" styleClass="field-label"/>
+                                    <TextField fx:id="phoneField" promptText="Enter your phone number" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Email -->
+                                <VBox spacing="5">
+                                    <Label text="Email" styleClass="field-label"/>
+                                    <TextField fx:id="emailField" promptText="Enter your email" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Chamber -->
+                                <VBox spacing="5">
+                                    <Label text="Chamber Name" styleClass="field-label"/>
+                                    <TextField fx:id="chamberField" promptText="Enter your chamber name" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Location -->
+                                <VBox spacing="5">
+                                    <Label text="Location" styleClass="field-label"/>
+                                    <TextField fx:id="locationField" promptText="Enter your location (e.g., Dhaka)" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Available Days with Per-Day Consultation Hours -->
+                                <VBox spacing="5">
+                                    <Label text="Select Available Days &amp; Set Hours for Each" styleClass="field-label"/>
+                                    <Label text="Check the days you're available and set hours for each day" style="-fx-font-size: 11px; -fx-text-fill: #718096; -fx-font-style: italic;"/>
+                                    <VBox fx:id="daysContainer" spacing="8" prefWidth="500" style="-fx-padding: 10; -fx-background-color: #f7fafc; -fx-background-radius: 8;">
+                                        <!-- Day rows will be added dynamically -->
+                                    </VBox>
+                                </VBox>
+
+                                <!-- Gender -->
+                                <VBox spacing="5">
+                                    <Label text="Gender" styleClass="field-label"/>
+                                    <ComboBox fx:id="genderField" promptText="Select gender" prefWidth="500" styleClass="combo-box"/>
+                                </VBox>
+
+                                <!-- Fees -->
+                                <VBox spacing="5">
+                                    <Label text="Consultation Fees" styleClass="field-label"/>
+                                    <TextField fx:id="feesField" promptText="Enter consultation fees" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Hospital Affiliations -->
+                                <VBox spacing="5">
+                                    <Label text="Hospital Affiliations" styleClass="field-label"/>
+                                    <TextField fx:id="hospitalAffiliationsField" promptText="Enter hospital affiliations" styleClass="text-field" prefWidth="500"/>
+                                </VBox>
+
+                                <!-- Online Consultation -->
+                                <VBox spacing="5">
+                                    <Label text="Online Consultation Available?" styleClass="field-label"/>
+                                    <ComboBox fx:id="onlineConsultationField" promptText="Online consultation?" prefWidth="500" styleClass="combo-box"/>
+                                </VBox>
+
+                                <!-- Consultation Duration -->
+                                <VBox spacing="5">
+                                    <Label text="Consultation Duration (minutes)" styleClass="field-label"/>
+                                    <ComboBox fx:id="consultationDurationField" promptText="Select duration (10-60 minutes)" prefWidth="500" styleClass="combo-box"/>
+                                </VBox>
+                            </VBox>
+
+                            <!-- Action Buttons -->
+                            <HBox spacing="15" alignment="CENTER" style="-fx-padding: 15 0 0 0;">
+                                <children>
+                                    <Button text="Cancel" onAction="#handleGoBack" prefWidth="140"
+                                            style="-fx-background-color: rgba(108,117,125,0.15); -fx-text-fill: #4a5568; -fx-background-radius: 25px; -fx-padding: 14px 32px; -fx-font-size: 15px; -fx-font-weight: bold; -fx-cursor: hand; -fx-border-color: #cbd5e0; -fx-border-width: 2px; -fx-border-radius: 25px;"/>
+                                    <Button text="Save Changes" onAction="#handleSave" styleClass="primary" prefWidth="160"
+                                            style="-fx-padding: 14px 32px; -fx-font-size: 15px;"/>
+                                </children>
+                            </HBox>
+                        </children>
+                        <padding>
+                            <Insets top="25" right="25" bottom="25" left="25"/>
+                        </padding>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

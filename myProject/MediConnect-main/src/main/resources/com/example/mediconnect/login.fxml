@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.mediconnect.LoginController"
+            fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+            style="-fx-background: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);">
+    <content>
+        <BorderPane minHeight="600" prefWidth="500"
+                    stylesheets="@style.css"
+                    style="-fx-background-color: linear-gradient(to bottom right, #667eea 0%, #764ba2 100%);">
+            <top>
+                <HBox alignment="TOP_LEFT">
+                    <padding>
+                        <Insets top="15" right="15" bottom="0" left="15"/>
+                    </padding>
+                    <children>
+                        <Button text="←" onAction="#handleGoBack" styleClass="back-button"/>
+                    </children>
+                </HBox>
+            </top>
+            <center>
+                <!-- Move content up: spacing from 20->14, top padding 24->6 -->
+                <VBox alignment="CENTER" spacing="14" maxHeight="550">
+                    <children>
+                        <Label text="AidAccess" styleClass="auth-title" style="-fx-font-size: 42px;"/>
+                        <Label text="Doctor Portal" styleClass="auth-subtitle" style="-fx-font-size: 18px;"/>
+                        <VBox alignment="CENTER" spacing="18" styleClass="card" prefWidth="340">
+                            <children>
+                                <Label text="Login to Your Account" styleClass="header-label"/>
+                                <VBox spacing="14" alignment="CENTER" prefWidth="280">
+                                    <children>
+                                        <TextField fx:id="usernameField" promptText="Username" prefWidth="280" styleClass="text-field"/>
+                                        <PasswordField fx:id="passwordField" promptText="Password" prefWidth="280" styleClass="password-field"/>
+                                        <Button text="Login" onAction="#handleLogin" prefWidth="280" styleClass="primary"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="8">
+                            <children>
+                                <Label text="Don't have an account?" style="-fx-text-fill: rgba(255,255,255,0.9); -fx-font-size: 13px;"/>
+                                <Button text="Create New Profile" onAction="#handleCreateProfile"
+                                        style="-fx-background-color: rgba(255,255,255,0.2); -fx-text-fill: white; -fx-background-radius: 20px; -fx-padding: 10px 28px; -fx-font-size: 14px; -fx-font-weight: bold; -fx-cursor: hand; -fx-border-color: rgba(255,255,255,0.5); -fx-border-width: 1.5px; -fx-border-radius: 20px;"/>
+                            </children>
+                        </VBox>
+                    </children>
+                    <padding>
+                        <Insets top="6" right="20" bottom="28" left="20"/>
+                    </padding>
+                </VBox>
+            </center>
+        </BorderPane>
+    </content>
+</ScrollPane>

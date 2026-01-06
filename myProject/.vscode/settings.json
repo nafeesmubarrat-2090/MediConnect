@@ -1,0 +1,14 @@
+{
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-21",
+      "path": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home",
+      "default": true
+    }
+  ],
+  "java.jdt.ls.java.home": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home",
+  "java.project.sourcePaths": ["."],
+  "java.project.referencedLibraries": [
+    "${workspaceFolder}/javafx-sdk-21.0.2/lib/**/*.jar"
+  ]
+}

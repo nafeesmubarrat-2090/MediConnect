@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compile JavaFX",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "find . -name \"*.java\" -print0 | xargs -0 /Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home/bin/javac --module-path ${workspaceFolder}/javafx-sdk-21.0.2/lib --add-modules javafx.controls,javafx.fxml -d out && cp -r MediConnect-main/src/main/resources/com out/ && cp MediConnect-main/src/main/resources/*.png out/"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$javac"
+    },
+    {
+      "label": "Run AidAccessApp",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home/bin/java --module-path ${workspaceFolder}/javafx-sdk-21.0.2/lib --add-modules javafx.controls,javafx.fxml -cp \"out:$HOME/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar\" myProject.AidAccessApp"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "Compile JavaFX"
+    }
+  ]
+}

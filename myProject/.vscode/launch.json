@@ -1,0 +1,53 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run AidAccessApp",
+      "request": "launch",
+      "mainClass": "myProject.AidAccessApp",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Compile JavaFX",
+      "classPaths": [
+        "${workspaceFolder}/out",
+        "${userHome}/.m2/repository/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar"
+      ],
+      "modulePaths": ["${workspaceFolder}/javafx-sdk-21.0.2/lib"],
+      "vmArgs": "--add-modules javafx.controls,javafx.fxml",
+      "env": {
+        "JAVA_HOME": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home",
+        "PATH": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home/bin:${env:PATH}"
+      }
+    },
+    {
+      "type": "java",
+      "name": "Run ServerFX (help chat server)",
+      "request": "launch",
+      "mainClass": "myProject.ServerFX",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Compile JavaFX",
+      "classPaths": ["${workspaceFolder}/out"],
+      "modulePaths": ["${workspaceFolder}/javafx-sdk-21.0.2/lib"],
+      "vmArgs": "--add-modules javafx.controls,javafx.fxml",
+      "env": {
+        "JAVA_HOME": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home",
+        "PATH": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home/bin:${env:PATH}"
+      }
+    },
+    {
+      "type": "java",
+      "name": "Run SupportAgentApp (chat window)",
+      "request": "launch",
+      "mainClass": "myProject.SupportAgentApp",
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "Compile JavaFX",
+      "classPaths": ["${workspaceFolder}/out"],
+      "modulePaths": ["${workspaceFolder}/javafx-sdk-21.0.2/lib"],
+      "vmArgs": "--add-modules javafx.controls,javafx.fxml",
+      "env": {
+        "JAVA_HOME": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home",
+        "PATH": "/Library/Java/JavaVirtualMachines/liberica-jdk-21-full.jdk/Contents/Home/bin:${env:PATH}"
+      }
+    }
+  ]
+}

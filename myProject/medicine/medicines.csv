@@ -1,0 +1,14 @@
+name,brand,shop,location,price
+Paracetamol,ACME,HealthPlus,Dhaka,12.5
+Paracetamol,ACME,HealthPlus,Chittagong,13.0
+Paracetamol,ACME,MediStore,Dhaka,11.8
+Ibuprofen,Beximco,HealthPlus,Dhaka,18.0
+Ibuprofen,Beximco,MediStore,Dhaka,17.5
+Ibuprofen,Beximco,MedCity,Chittagong,19.0
+Cetirizine,Square,HealthPlus,Dhaka,9.5
+Cetirizine,Square,MediStore,Dhaka,9.0
+Cetirizine,Square,MedCity,Rajshahi,10.0
+Omeprazole,Incepta,HealthPlus,Dhaka,14.5
+Omeprazole,Incepta,MedCity,Dhaka,15.0
+Azithromycin,Renata,HealthPlus,Dhaka,25.0
+Azithromycin,Renata,MediStore,Chittagong,26.5

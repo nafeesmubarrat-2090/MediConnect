@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.mediconnect.DoctorDetailController"
+            prefWidth="1100" prefHeight="600" stylesheets="@style.css"
+            style="-fx-background-color: #f7fafc;">
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding:16 20;">
+            <children>
+                <Button text="←" onAction="#goBack" styleClass="back-circle"/>
+                <Label text="AidAccess • Doctor Profile" style="-fx-font-size:20px; -fx-font-weight:800; -fx-text-fill:#4a5568;"/>
+                <Pane HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background:transparent; -fx-background-color:transparent;">
+            <content>
+                <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding:30 40;">
+                    <children>
+                        <!-- Doctor Info Card -->
+                        <VBox spacing="24" styleClass="card" prefWidth="760">
+                            <padding><Insets top="40" left="40" right="40" bottom="40"/></padding>
+                            <children>
+                                <!-- Doctor Name & Title -->
+                                <VBox spacing="8" alignment="CENTER">
+                                    <children>
+                                        <Label fx:id="doctorNameLabel" text="Dr. John Doe"
+                                               style="-fx-font-size:32px; -fx-font-weight:700; -fx-text-fill:#667eea;"/>
+                                        <Label fx:id="doctorSectorLabel" text="Cardiologist"
+                                               style="-fx-font-size:18px; -fx-font-weight:600; -fx-text-fill:#4a5568;"/>
+                                    </children>
+                                </VBox>
+
+                                <Separator/>
+
+                                <!-- Doctor Details Grid -->
+                                <GridPane hgap="30" vgap="18">
+                                    <columnConstraints>
+                                        <ColumnConstraints percentWidth="50"/>
+                                        <ColumnConstraints percentWidth="50"/>
+                                    </columnConstraints>
+
+                                    <!-- Left Column -->
+                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                        <children>
+                                            <Label text="Qualifications" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="qualificationsLabel" text="MBBS, MD"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                        <children>
+                                            <Label text="Experience" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="experienceLabel" text="15 years"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label text="Age" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="ageLabel" text="45 years"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label text="Gender" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="genderLabel" text="Male"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label text="Chamber / Clinic" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="chamberLabel" text="HeartCare Clinic"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label text="Location" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="locationLabel" text="Dhaka"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label text="Hospital Affiliation" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="hospitalLabel" text="Dhaka Medical College"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label text="Phone" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="phoneLabel" text="+880 1711-111111"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label text="Email" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="emailLabel" text="doctor@example.com"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label text="Consultation Fee" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="feesLabel" text="৳ 1000"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#2d3748; -fx-font-weight:600;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2">
+                                        <children>
+                                            <Label text="Schedule" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <VBox fx:id="scheduleContainer" spacing="4" style="-fx-padding: 4 0 0 0;"/>
+                                        </children>
+                                    </VBox>
+
+                                    <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2">
+                                        <children>
+                                            <Label text="Online Consultation Available" style="-fx-font-size:13px; -fx-font-weight:700; -fx-text-fill:#718096;"/>
+                                            <Label fx:id="onlineLabel" text="Yes"
+                                                   style="-fx-font-size:15px; -fx-text-fill:#48bb78; -fx-font-weight:600;"/>
+                                        </children>
+                                    </VBox>
+                                </GridPane>
+
+                                <Separator/>
+
+                                <!-- Book Reservation Button -->
+                                <HBox alignment="CENTER" style="-fx-padding:10 0 0 0;">
+                                    <children>
+                                        <Button text="Book a Reservation" onAction="#handleBookReservation"
+                                                styleClass="primary"
+                                                style="-fx-font-size:18px; -fx-padding:16 48; -fx-background-radius:28;"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER" style="-fx-padding:12;">
+            <children>
+                <Label text="© 2025 AidAccess • MediConnect" style="-fx-text-fill:#a0aec0; -fx-font-size:11px;"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>
+
